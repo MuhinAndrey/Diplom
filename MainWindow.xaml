@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_bank_system"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Банк" Height="600" Width="900">
+    <Grid Background="#530FAD">
+        <Border MinWidth="400" MaxWidth="600" Margin="15" Background="Azure" VerticalAlignment="Center" Padding="30" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel Cursor="">
+                <TextBlock Text="Авторизация" FontSize ="30" FontWeight="Bold" Margin="170 0 0 0"/>
+                <TextBox x:Name="inputLogin" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <PasswordBox x:Name="inputPassword" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <Button x:Name="enterButton" Content="Войти" Margin="0 20 0 0" Click="EnterButton_Click"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

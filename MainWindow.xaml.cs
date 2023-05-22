@@ -24,5 +24,11 @@ namespace The_bank_system
         {
             InitializeComponent();
         }
+
+        private void EnterButton_Click(object sender, RoutedEventArgs e)
+        {
+            string _login = inputLogin.Text;
+            string _password = inputPassword.Password;
+        }
     }
 }
