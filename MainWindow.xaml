@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:The_bank_system"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Банк" Height="600" Width="900">
+        Title="Банк" Height="1080" Width="1920">
     <Grid Background="#530FAD">
         <Border MinWidth="400" MaxWidth="600" Margin="15" Background="Azure" VerticalAlignment="Center" Padding="30" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Cursor="">
-                <TextBlock Text="Авторизация" FontSize ="30" FontWeight="Bold" Margin="170 0 0 0"/>
+                <TextBlock Text="Авторизация" HorizontalAlignment="Center" FontSize ="30" FontWeight="Bold"/>
                 <TextBox x:Name="inputLogin" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="inputPassword" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <Button x:Name="enterButton" Content="Войти" Margin="0 20 0 0" Click="EnterButton_Click"/>
