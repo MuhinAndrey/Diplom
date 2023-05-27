@@ -1,11 +1,11 @@
-﻿<Window x:Class="The_bank_system.ServicesWindow"
+﻿<Window x:Class="The_bank_system.EmployeeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_bank_system"
         mc:Ignorable="d"
-       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Банк" Height="1080" Width="1920">
     <Grid Background="#530FAD">
         <Border MinWidth="600" Width="1700" Height="900" Margin="15" Background="Azure" VerticalAlignment="Center" Padding="30" CornerRadius="20">
@@ -13,9 +13,7 @@
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Cursor="">
-                <TextBlock Text="Услуги" HorizontalAlignment="Center" FontSize ="60" FontWeight="Bold" Margin="20"/>
-                <Button x:Name="Credit_services" Content="Кредитование" FontSize ="30" Width="600" Height="190" HorizontalAlignment="Center" Margin="80" Click="Credit_services_Click"/>
-                <Button x:Name="Deposit_services" Content="Депозит" FontSize ="30" Width="600" Height="190" HorizontalAlignment="Center" Margin="80" Click="Deposit_services_Click"/>
+                <TextBlock Text="Сотрудники" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
             </StackPanel>
         </Border>
     </Grid>

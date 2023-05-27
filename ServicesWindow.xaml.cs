@@ -23,5 +23,19 @@ namespace The_bank_system
         {
             InitializeComponent();
         }
+
+        private void Credit_services_Click(object sender, RoutedEventArgs e)
+        {
+            CreditWindow creditWindow = new CreditWindow();
+            creditWindow.Show();
+            Close();
+        }
+
+        private void Deposit_services_Click(object sender, RoutedEventArgs e)
+        {
+            DepositWindow depositWindow = new DepositWindow();
+            depositWindow.Show();
+            Close();
+        }
     }
 }

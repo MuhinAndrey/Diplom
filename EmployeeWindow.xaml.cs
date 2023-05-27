@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace The_bank_system
 {
     /// <summary>
-    /// Логика взаимодействия для RegistrationWindow.xaml
+    /// Логика взаимодействия для EmployeeWindow.xaml
     /// </summary>
-    public partial class RegistrationWindow : Window
+    public partial class EmployeeWindow : Window
     {
-        public RegistrationWindow()
+        public EmployeeWindow()
         {
             InitializeComponent();
-        }
-
-        private void Registration_Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Регистрация прошла успешно!");
         }
     }
 }

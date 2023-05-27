@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace The_bank_system
 {
     /// <summary>
-    /// Логика взаимодействия для OfficeWindow.xaml
+    /// Логика взаимодействия для AdminOfficeWindow.xaml
     /// </summary>
-    public partial class OfficeWindow : Window
+    public partial class AdminOfficeWindow : Window
     {
-        public OfficeWindow()
+        public AdminOfficeWindow()
         {
             InitializeComponent();
         }
@@ -30,7 +30,6 @@ namespace The_bank_system
             registrationWindow.Show();
             Close();
         }
-
 
         private void Services_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -48,8 +47,22 @@ namespace The_bank_system
 
         private void Service_Viewing_Button_Click(object sender, RoutedEventArgs e)
         {
-            RegServiceWindow servicesWindow = new RegServiceWindow();
-            servicesWindow.Show();
+            RegServiceWindow regserviceWindow = new RegServiceWindow();
+            regserviceWindow.Show();
+            Close();
+        }
+
+        private void Reg_Employee_Window_Button_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeRegWindow regserviceWindow = new EmployeeRegWindow();
+            regserviceWindow.Show();
+            Close();
+        }
+
+        private void Employee_Button_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeWindow employeeWindow = new EmployeeWindow();
+            employeeWindow.Show();
             Close();
         }
     }

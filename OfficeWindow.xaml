@@ -13,9 +13,11 @@
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Cursor="">
-                <TextBlock Text="Кабинет пользователя" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="20"/>
-                <Button x:Name="Reg_Window_Button" Content="Регистрация клиента" FontSize ="25" HorizontalAlignment="Left" Width="380" Height="190" Margin="100 80 80 80" Click="Reg_Window_Button_Click" />
-                <Button x:Name="Services_Button"  Content="Предоставление услуг" FontSize ="25" HorizontalAlignment="Left" Width="380" Height="190" Margin="100 80 80 80" Cursor="Hand" Click="Services_Button_Click"/>
+                <TextBlock Text="Кабинет пользователя" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
+                <Button x:Name="Reg_Window_Button" Content="Регистрация клиента" FontSize ="25" HorizontalAlignment="Center" Width="380" Height="100" Margin="40" Click="Reg_Window_Button_Click" />
+                <Button x:Name="Services_Button" Content="Предоставление услуг" FontSize ="25" HorizontalAlignment="Center" Width="380" Height="100" Margin="40" Cursor="Hand" Click="Services_Button_Click"/>
+                <Button x:Name="Clients_Button" Content="Клиенты" FontSize ="25" HorizontalAlignment="Center" Width="380" Height="100" Margin="40" Cursor="Hand" Click="Clients_Button_Click"/>
+                <Button x:Name="Service_Viewing_Button" Content="Зарегистрированые услуги" FontSize ="25" HorizontalAlignment="Center" Width="380" Height="100" Margin="40" Cursor="Hand" Click="Service_Viewing_Button_Click"/>
             </StackPanel>
         </Border>
     </Grid>
