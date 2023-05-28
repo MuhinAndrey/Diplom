@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace The_bank_system
 {
     /// <summary>
-    /// Логика взаимодействия для RegServiceWindow.xaml
+    /// Логика взаимодействия для DepositViewingWindow.xaml
     /// </summary>
-    public partial class RegServiceWindow : Window
+    public partial class DepositViewingWindow : Window
     {
-        public RegServiceWindow()
+        public DepositViewingWindow()
         {
             InitializeComponent();
         }

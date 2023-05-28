@@ -47,8 +47,8 @@ namespace The_bank_system
 
         private void Service_Viewing_Button_Click(object sender, RoutedEventArgs e)
         {
-            RegServiceWindow regserviceWindow = new RegServiceWindow();
-            regserviceWindow.Show();
+            VievingServicesWindow vievingServicesWindow = new VievingServicesWindow();
+            vievingServicesWindow.Show();
             Close();
         }
 
