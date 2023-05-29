@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace The_bank_system
 {
-    internal class DataBase
+    public class DataBase
     {
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=GrEI3uI3JI9I;Initial Catalog=Bank;Integrated Security=True");
 
-        public void openConnection()
+        public void OpenConnection()
         {
-            if (sqlConnection.State == System.Data.ConnectionState.Open) 
+            if (sqlConnection.State == System.Data.ConnectionState.Closed) 
             {
                 sqlConnection.Open();
             }
         }
 
-        public void closedConnection()
+        public void ClosedConnection()
         {
             if (sqlConnection.State == System.Data.ConnectionState.Open)
             {
@@ -27,7 +28,7 @@ namespace The_bank_system
             }
         }
 
-        public SqlConnection getSqlConnection() 
+        public SqlConnection GetSqlConnection() 
         {
             return sqlConnection;
         }

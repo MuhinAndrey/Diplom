@@ -31,26 +31,44 @@ namespace The_bank_system
 
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-            string _login = inputLogin.Text.Trim();
-            string _password = inputPassword.Password.Trim();
+            var _login = inputLogin.Text.Trim();
+            var _password = inputPassword.Password.Trim();
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable dataTable = new DataTable();
 
-            string querystring = $"select id_user, login_user, password_user from Users where login_user = '{_login}' and password_user = '{_password}'";
+            string querystring = $"select id_user, login_user, password_user, is_admin from Users where login_user = '{_login}' and password_user = '{_password}'";
 
-            SqlCommand sqlCommand = new SqlCommand(querystring, _dataBase.getSqlConnection());
+            SqlCommand sqlCommand = new SqlCommand(querystring, _dataBase.GetSqlConnection());
             adapter.SelectCommand = sqlCommand;
             adapter.Fill(dataTable);
 
             if (dataTable.Rows.Count == 1)
             {
-                MessageBox.Show("Вы успешно вошли!");
-                OfficeWindow officeWindow = new OfficeWindow();
-                officeWindow.Show();
-                Close();
-            }
+                
+                var _userStatus = Convert.ToBoolean(dataTable.Rows[0].ItemArray[3]);
 
+
+                if (_userStatus == true)
+                {
+                    MessageBox.Show("Вы успешно вошли, как администратор!");
+                    AdminOfficeWindow adminOfficeWindow = new AdminOfficeWindow();
+                    adminOfficeWindow.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Вы успешно вошли!");
+                    OfficeWindow officeWindow = new OfficeWindow();
+                    officeWindow.Show();
+                    Close();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Такой учётной записи не существует!");
+            }
         }
     }
 }

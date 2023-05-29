@@ -11,17 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
+
 
 namespace The_bank_system
 {
-    /// <summary>
-    /// Логика взаимодействия для EmployeeWindow.xaml
-    /// </summary>
     public partial class EmployeeWindow : Window
     {
+
         public EmployeeWindow()
         {
             InitializeComponent();
+        }
+
+        private void Employee_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataBase _dataBase = new DataBase();
         }
     }
 }
