@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище BankModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="id_client" />
+          </Key>
+          <Property Name="id_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="surname_client" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="name_client" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="patronymic_client" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="passport_client" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="phone_client" Type="nchar" MaxLength="12" Nullable="false" />
+          <Property Name="address_client" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Credits">
+          <Key>
+            <PropertyRef Name="id_credit" />
+          </Key>
+          <Property Name="id_credit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_client" Type="int" Nullable="false" />
+          <Property Name="sum_credit" Type="money" Nullable="false" />
+          <Property Name="duration_credit" Type="int" Nullable="false" />
+          <Property Name="procent_credit" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="id_user" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deposits">
+          <Key>
+            <PropertyRef Name="id_deposit" />
+          </Key>
+          <Property Name="id_deposit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_client" Type="int" Nullable="false" />
+          <Property Name="sum_deposit" Type="money" Nullable="false" />
+          <Property Name="duration_deposit" Type="int" Nullable="false" />
+          <Property Name="procent_deposit" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="id_user" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login_user" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password_user" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="surname_user" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="name_user" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="patronymic_user" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="passport_user" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="is_admin" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Credits_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Credits" Type="Self.Credits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="id_client" />
+            </Principal>
+            <Dependent Role="Credits">
+              <PropertyRef Name="id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Credits_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Credits" Type="Self.Credits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Credits">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deposits_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Deposits" Type="Self.Deposits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="id_client" />
+            </Principal>
+            <Dependent Role="Deposits">
+              <PropertyRef Name="id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deposits_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Deposits" Type="Self.Deposits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Deposits">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище BankModelContainer">
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Credits" EntityType="Self.Credits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deposits" EntityType="Self.Deposits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Credits_Clients" Association="Self.FK_Credits_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Credits" EntitySet="Credits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Credits_Users" Association="Self.FK_Credits_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Credits" EntitySet="Credits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deposits_Clients" Association="Self.FK_Deposits_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Deposits" EntitySet="Deposits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deposits_Users" Association="Self.FK_Deposits_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Deposits" EntitySet="Deposits" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="id_client" />
+          </Key>
+          <Property Name="id_client" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="surname_client" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_client" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="patronymic_client" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="passport_client" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="phone_client" Type="String" MaxLength="12" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="address_client" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Credits" Relationship="Self.FK_Credits_Clients" FromRole="Clients" ToRole="Credits" />
+          <NavigationProperty Name="Deposits" Relationship="Self.FK_Deposits_Clients" FromRole="Clients" ToRole="Deposits" />
+        </EntityType>
+        <EntityType Name="Credits">
+          <Key>
+            <PropertyRef Name="id_credit" />
+          </Key>
+          <Property Name="id_credit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_client" Type="Int32" Nullable="false" />
+          <Property Name="sum_credit" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="duration_credit" Type="Int32" Nullable="false" />
+          <Property Name="procent_credit" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="id_user" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Credits_Clients" FromRole="Credits" ToRole="Clients" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Credits_Users" FromRole="Credits" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Deposits">
+          <Key>
+            <PropertyRef Name="id_deposit" />
+          </Key>
+          <Property Name="id_deposit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_client" Type="Int32" Nullable="false" />
+          <Property Name="sum_deposit" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="duration_deposit" Type="Int32" Nullable="false" />
+          <Property Name="procent_deposit" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="id_user" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Deposits_Clients" FromRole="Deposits" ToRole="Clients" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Deposits_Users" FromRole="Deposits" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="surname_user" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name_user" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="patronymic_user" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passport_user" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="is_admin" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Credits" Relationship="Self.FK_Credits_Users" FromRole="Users" ToRole="Credits" />
+          <NavigationProperty Name="Deposits" Relationship="Self.FK_Deposits_Users" FromRole="Users" ToRole="Deposits" />
+        </EntityType>
+        <Association Name="FK_Credits_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Credits" Type="Self.Credits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="id_client" />
+            </Principal>
+            <Dependent Role="Credits">
+              <PropertyRef Name="id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deposits_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Deposits" Type="Self.Deposits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="id_client" />
+            </Principal>
+            <Dependent Role="Deposits">
+              <PropertyRef Name="id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Credits_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Credits" Type="Self.Credits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Credits">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deposits_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Deposits" Type="Self.Deposits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Deposits">
+              <PropertyRef Name="id_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BankEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="Credits" EntityType="Self.Credits" />
+          <EntitySet Name="Deposits" EntityType="Self.Deposits" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_Credits_Clients" Association="Self.FK_Credits_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Credits" EntitySet="Credits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deposits_Clients" Association="Self.FK_Deposits_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Deposits" EntitySet="Deposits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Credits_Users" Association="Self.FK_Credits_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Credits" EntitySet="Credits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deposits_Users" Association="Self.FK_Deposits_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Deposits" EntitySet="Deposits" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище BankModelContainer" CdmEntityContainer="BankEntities">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="BankModel.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="surname_client" ColumnName="surname_client" />
+                <ScalarProperty Name="name_client" ColumnName="name_client" />
+                <ScalarProperty Name="patronymic_client" ColumnName="patronymic_client" />
+                <ScalarProperty Name="passport_client" ColumnName="passport_client" />
+                <ScalarProperty Name="phone_client" ColumnName="phone_client" />
+                <ScalarProperty Name="address_client" ColumnName="address_client" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Credits">
+            <EntityTypeMapping TypeName="BankModel.Credits">
+              <MappingFragment StoreEntitySet="Credits">
+                <ScalarProperty Name="id_credit" ColumnName="id_credit" />
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="sum_credit" ColumnName="sum_credit" />
+                <ScalarProperty Name="duration_credit" ColumnName="duration_credit" />
+                <ScalarProperty Name="procent_credit" ColumnName="procent_credit" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deposits">
+            <EntityTypeMapping TypeName="BankModel.Deposits">
+              <MappingFragment StoreEntitySet="Deposits">
+                <ScalarProperty Name="id_deposit" ColumnName="id_deposit" />
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="sum_deposit" ColumnName="sum_deposit" />
+                <ScalarProperty Name="duration_deposit" ColumnName="duration_deposit" />
+                <ScalarProperty Name="procent_deposit" ColumnName="procent_deposit" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="BankModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="login_user" ColumnName="login_user" />
+                <ScalarProperty Name="password_user" ColumnName="password_user" />
+                <ScalarProperty Name="surname_user" ColumnName="surname_user" />
+                <ScalarProperty Name="name_user" ColumnName="name_user" />
+                <ScalarProperty Name="patronymic_user" ColumnName="patronymic_user" />
+                <ScalarProperty Name="passport_user" ColumnName="passport_user" />
+                <ScalarProperty Name="is_admin" ColumnName="is_admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
