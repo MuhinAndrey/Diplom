@@ -14,19 +14,21 @@
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Регистрация сотрудника" HorizontalAlignment="Center" FontSize ="60" FontWeight="Bold" Margin="10"/>
-                <TextBlock Text="Фамилия" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 258 0"/>
+                <TextBlock Text="Фамилия" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 5 258 0"/>
                 <TextBox x:Name="Surname_employee" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Имя" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 305 0"/>
+                <TextBlock Text="Имя" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 5 305 0"/>
                 <TextBox x:Name="Name_employee" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Отчество" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 259 0"/>
+                <TextBlock Text="Отчество" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 5 259 0"/>
                 <TextBox x:Name="Patronymic_employee" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Серия и номер паспорта" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 110 0"/>
+                <TextBlock Text="Серия и номер паспорта" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 5 110 0"/>
                 <TextBox x:Name="Passport_employee" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Логин" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 290 0"/>
+                <TextBlock Text="Логин" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 5 290 0"/>
                 <TextBox x:Name="Login_employee" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Пароль" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 270 0"/>
+                <TextBlock Text="Пароль" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 5 274 0"/>
                 <TextBox x:Name="Password_employee" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <Button x:Name="Reg_Employee_Button" Content="Зарегистрировать" FontSize ="30" Width="600" Height="60" HorizontalAlignment="Center" Margin="30" Click="Reg_Employee_Button_Click"/>
+                <TextBlock Text="Роль (администратор/пользователь)" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 5 0 0"/>
+                <TextBox x:Name="Role_employee" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
+                <Button x:Name="Reg_Employee_Button" Content="Зарегистрировать" FontSize ="30" Width="600" Height="60" HorizontalAlignment="Center" Margin="15" Click="Reg_Employee_Button_Click"/>
             </StackPanel>
         </Border>
     </Grid>

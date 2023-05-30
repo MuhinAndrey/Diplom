@@ -17,9 +17,6 @@ using System.Data;
 
 namespace The_bank_system
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         DataBase _dataBase = new DataBase();
@@ -37,7 +34,8 @@ namespace The_bank_system
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable dataTable = new DataTable();
 
-            string querystring = $"select id_user, login_user, password_user, is_admin from Users where login_user = '{_login}' and password_user = '{_password}'";
+            string querystring = $"select id_user, login_user, password_user, is_admin from Users" +
+                $" where login_user = '{_login}' and password_user = '{_password}'";
 
             SqlCommand sqlCommand = new SqlCommand(querystring, _dataBase.GetSqlConnection());
             adapter.SelectCommand = sqlCommand;
@@ -45,11 +43,9 @@ namespace The_bank_system
 
             if (dataTable.Rows.Count == 1)
             {
-                
                 var _userStatus = Convert.ToBoolean(dataTable.Rows[0].ItemArray[3]);
 
-
-                if (_userStatus == true)
+                if (_userStatus)
                 {
                     MessageBox.Show("Вы успешно вошли, как администратор!");
                     AdminOfficeWindow adminOfficeWindow = new AdminOfficeWindow();
@@ -63,7 +59,6 @@ namespace The_bank_system
                     officeWindow.Show();
                     Close();
                 }
-                
             }
             else
             {

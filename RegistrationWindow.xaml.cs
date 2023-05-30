@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Windows.Navigation;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -92,7 +91,6 @@ namespace The_bank_system
             }
 
         }
-
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {

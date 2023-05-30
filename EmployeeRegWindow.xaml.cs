@@ -18,10 +18,8 @@ namespace The_bank_system
 {
     public partial class EmployeeRegWindow : Window
     {
-
         DataBase _dataBase = new DataBase();
         
-
         public EmployeeRegWindow()
         {
             InitializeComponent();
@@ -41,10 +39,25 @@ namespace The_bank_system
             var _passport = Passport_employee.Text.Trim();
             var _login = Login_employee.Text.Trim();
             var _password = Password_employee.Text.Trim();
+            var _role = Role_employee.Text.ToLower().Trim();
+            var _checkRole = 0;
+
+            if (_role == "администратор")
+            {
+                _checkRole = 1;
+            }
+            else if(_role == "пользователь")
+            {
+                _checkRole = 0;
+            }
+            else
+            {
+                MessageBox.Show("Такой роли нет!");
+            }
 
             string querystring = $"insert into Users (login_user, password_user, surname_user, name_user," +
                 $" patronymic_user, passport_user, is_admin) values ('{_login}', '{_password}','{_surname}'," +
-                $"'{_name}', '{_patronymic}', '{_passport}', 0)";
+                $"'{_name}', '{_patronymic}', '{_passport}', '{_checkRole}')";
 
             SqlCommand sqlCommand = new SqlCommand(querystring, _dataBase.GetSqlConnection());
 
