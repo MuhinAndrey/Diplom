@@ -14,14 +14,14 @@
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Кредиты" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
-                <DataGrid x:Name="DGridClients" Height="730">
+                <DataGrid x:Name="DGridCredits" Height="730" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Id клиента" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Сумма" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Длительность в месяцах" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Процент" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Id сотрудника" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Id" Binding="{Binding id_credit}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Id клиента" Binding="{Binding id_client}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Сумма" Binding="{Binding sum_credit}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Длительность в месяцах" Binding="{Binding duration_credit}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Процент" Binding="{Binding procent_credit}"  Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Id сотрудника" Binding="{Binding id_user}" Width="*"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

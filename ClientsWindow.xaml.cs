@@ -22,6 +22,7 @@ namespace The_bank_system
         public ClientsWindow()
         {
             InitializeComponent();
+            DGridClients.ItemsSource = BankEntities.GetContext().Clients.ToList();
         }
     }
 }

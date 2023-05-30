@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:The_bank_system"
-        Loaded="Employee_Loaded"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Банк" Height="1080" Width="1920">
@@ -15,13 +14,13 @@
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Сотрудники" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
-                <DataGrid x:Name="DGridEmployee" Height="730">
+                <DataGrid x:Name="DGridEmployee" Height="730" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Фамилия" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Имя" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Отчество" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Роль" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Id" Binding="{Binding id_user}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Фамилия" Binding="{Binding surname_user}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Имя" Binding="{Binding name_user}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic_user}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Роль" Binding="{Binding is_admin}" Width="*"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

@@ -14,15 +14,15 @@
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Клиенты" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
-                <DataGrid x:Name="DGridClients" Height="730">
+                <DataGrid x:Name="DGridClients" Height="730" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Id" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Фамилия" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Имя" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Отчество" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Серия и номер паспорта" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Номер телефона" Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Адрес проживания" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Id" Binding="{Binding id_client}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Фамилия" Binding="{Binding surname_client}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Имя" Binding="{Binding name_client}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic_client}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Серия и номер паспорта" Binding="{Binding passport_client}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Номер телефона" Binding="{Binding phone_client}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Адрес проживания" Binding="{Binding address_client}" Width="*"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

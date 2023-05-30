@@ -24,11 +24,7 @@ namespace The_bank_system
         public EmployeeWindow()
         {
             InitializeComponent();
-        }
-
-        private void Employee_Loaded(object sender, RoutedEventArgs e)
-        {
-            
+            DGridEmployee.ItemsSource = BankEntities.GetContext().Users.ToList();
         }
     }
 }

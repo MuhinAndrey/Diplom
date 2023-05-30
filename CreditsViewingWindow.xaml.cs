@@ -22,6 +22,7 @@ namespace The_bank_system
         public CreditsViewingWindow()
         {
             InitializeComponent();
+            DGridCredits.ItemsSource = BankEntities.GetContext().Credits.ToList();
         }
     }
 }

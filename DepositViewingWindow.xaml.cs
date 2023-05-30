@@ -22,6 +22,7 @@ namespace The_bank_system
         public DepositViewingWindow()
         {
             InitializeComponent();
+            DGridDeposit.ItemsSource = BankEntities.GetContext().Deposits.ToList();
         }
     }
 }
