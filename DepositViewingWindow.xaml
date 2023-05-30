@@ -14,6 +14,16 @@
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Депозиты" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
+                <DataGrid x:Name="DGridClients" Height="730">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Id клиента" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Сумма" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Длительность в месяцах" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Процент" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Id сотрудника" Width="*"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </Border>
     </Grid>

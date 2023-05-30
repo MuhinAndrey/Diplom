@@ -19,6 +19,7 @@ namespace The_bank_system
 {
     public partial class EmployeeWindow : Window
     {
+        
 
         public EmployeeWindow()
         {
@@ -27,7 +28,7 @@ namespace The_bank_system
 
         private void Employee_Loaded(object sender, RoutedEventArgs e)
         {
-            DataBase _dataBase = new DataBase();
+            
         }
     }
 }

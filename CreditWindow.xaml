@@ -14,19 +14,17 @@
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Кредитование" HorizontalAlignment="Center" FontSize ="60" FontWeight="Bold" Margin="10"/>
-                <TextBlock Text="Фамилия" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 258 0"/>
-                <TextBox x:Name="Surname_client" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Имя" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 305 0"/>
-                <TextBox x:Name="Name_client" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Отчество" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 259 0"/>
-                <TextBox x:Name="Patronymic_client" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
+                <TextBlock Text="Id клиента" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 250 0"/>
+                <TextBox x:Name="Id_client" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
                 <TextBlock Text="Сумма" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 286 0"/>
                 <TextBox x:Name="Sum_credit" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
                 <TextBlock Text="Срок в месяцах" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 200 0"/>
                 <TextBox x:Name="Term_credit" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
                 <TextBlock Text="Процент" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 260 0"/>
                 <TextBox x:Name="Procent_credit" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <Button x:Name="Reg_Credit_Button" Content="Зарегистрировать" FontSize ="30" Width="600" Height="60" HorizontalAlignment="Center" Margin="20" Click="Reg_Credit_Button_Click"/>
+                <TextBlock Text="Ваш id" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 280 0"/>
+                <TextBox x:Name="Id_user" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
+                <Button x:Name="Reg_Credit_Button" Content="Зарегистрировать" FontSize ="30" Width="600" Height="60" HorizontalAlignment="Center" Margin="40" Click="Reg_Credit_Button_Click"/>
             </StackPanel>
         </Border>
     </Grid>

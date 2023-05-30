@@ -15,13 +15,13 @@
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Сотрудники" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
-                <DataGrid x:Name="DGridEmployee" Height="729">
+                <DataGrid x:Name="DGridEmployee" Height="730">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="id"  Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Фамилия"  Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Имя"  Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Отчество"  Width="*"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Роль"  Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Id" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Фамилия" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Имя" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Отчество" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Роль" Width="*"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
