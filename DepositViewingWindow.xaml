@@ -14,7 +14,7 @@
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Депозиты" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
-                <DataGrid x:Name="DGridDeposit" Height="730" AutoGenerateColumns="False">
+                <DataGrid x:Name="DGridDeposit" Height="730" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding id_deposit}" Width="*"></DataGridTextColumn>
                         <DataGridTextColumn Header="Id клиента" Binding="{Binding id_client}" Width="*"></DataGridTextColumn>

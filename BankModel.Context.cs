@@ -17,7 +17,6 @@ namespace The_bank_system
     {
         private static BankEntities _context;
 
-
         public BankEntities()
             : base("name=BankEntities")
         {
@@ -25,13 +24,11 @@ namespace The_bank_system
 
         public static BankEntities GetContext()
         {
-            if(_context == null)
-            {
+            if (_context == null)
                 _context = new BankEntities();
-            }
+
             return _context;
         }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
