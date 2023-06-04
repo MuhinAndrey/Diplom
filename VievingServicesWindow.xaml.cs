@@ -13,29 +13,31 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace The_bank_system
-{
-    /// <summary>
-    /// Логика взаимодействия для VievingServicesWindow.xaml
-    /// </summary>
+{//Окно "Зарегистрированные услуги"
     public partial class VievingServicesWindow : Window
     {
         public VievingServicesWindow()
         {
             InitializeComponent();
         }
-
+        //Переход на окно просмотра зарегистрированных кредитов
         private void Credit_Viewing_Click(object sender, RoutedEventArgs e)
         {
-            CreditsViewingWindow creditsViewingWindow = new CreditsViewingWindow();
-            creditsViewingWindow.Show();
-            Close();
+            Hide();
+            new CreditsViewingWindow().ShowDialog();
+            ShowDialog ();
         }
-
+        //Переход на окно просмотра зарегистрированных депозитов
         private void Deposit_Viewing_Click(object sender, RoutedEventArgs e)
+        { 
+            Hide();
+            new DepositViewingWindow().ShowDialog();
+            ShowDialog ();
+        }
+        //Кнопка "Назад"
+        private void GoBack_Click(object sender, RoutedEventArgs e)
         {
-            DepositViewingWindow depositViewingWindow = new DepositViewingWindow();
-            depositViewingWindow.Show();
-            Close();
+            DialogResult = false;
         }
     }
 }

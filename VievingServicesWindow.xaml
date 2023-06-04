@@ -7,15 +7,16 @@
         mc:Ignorable="d"
        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Банк" Height="1080" Width="1920">
-    <Grid Background="#530FAD">
+    <Grid Background="#0772A1">
         <Border MinWidth="600" Width="1700" Height="900" Margin="15" Background="Azure" VerticalAlignment="Center" Padding="30" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Зарегистрированные услуги" HorizontalAlignment="Center" FontSize ="60" FontWeight="Bold" Margin="20"/>
-                <Button x:Name="Credit_Viewing_services" Content="Кредиты" FontSize ="30" Width="600" Height="190" HorizontalAlignment="Center" Margin="80" Click="Credit_Viewing_Click"/>
-                <Button x:Name="Deposit_Viving_services" Content="Депозиты" FontSize ="30" Width="600" Height="190" HorizontalAlignment="Center" Margin="80" Click="Deposit_Viewing_Click"/>
+                <Button x:Name="GoBack" Content="Назад" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignOutlinedDarkButton}" Margin="20 0 0 0" Click="GoBack_Click"/>
+                <Button x:Name="Credit_Viewing_services" Content="Кредиты" FontSize ="30" Width="600" Height="190" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedDarkButton}" Margin="80" Click="Credit_Viewing_Click"/>
+                <Button x:Name="Deposit_Viving_services" Content="Депозиты" FontSize ="30" Width="600" Height="190" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedDarkButton}" Margin="80" Click="Deposit_Viewing_Click"/>
             </StackPanel>
         </Border>
     </Grid>

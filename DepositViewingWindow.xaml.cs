@@ -13,16 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace The_bank_system
-{
-    /// <summary>
-    /// Логика взаимодействия для DepositViewingWindow.xaml
-    /// </summary>
+{//Окно просмотра зарегистрированных депозитов
     public partial class DepositViewingWindow : Window
     {
         public DepositViewingWindow()
         {
             InitializeComponent();
+            //Получение данных из модели БД
             DGridDeposit.ItemsSource = BankEntities.GetContext().Deposits.ToList();
+        }
+        //Кнопка "Назад"
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

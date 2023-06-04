@@ -7,14 +7,14 @@
         mc:Ignorable="d"        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Банк" Height="1080" Width="1920">
-    <Grid Background="#530FAD">
+    <Grid Background="#0772A1">
         <Border MinWidth="600" Width="1700" Height="900" Margin="15" Background="Azure" VerticalAlignment="Center" Padding="30" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Регистрация клиента" HorizontalAlignment="Center" FontSize ="50" FontWeight="Bold" Margin="10"/>
-                <Button x:Name="GoBack" Content="Назад" HorizontalAlignment="Left" Margin="20 0 0 0" Click="GoBack_Click"/>
+                <Button x:Name="GoBack" Content="Назад" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignOutlinedDarkButton}" Margin="20 0 0 0" Click="GoBack_Click"/>
                 <TextBlock Text="Фамилия" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 258 0"/>
                 <TextBox x:Name="Surname_client" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
                 <TextBlock Text="Имя" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 305 0"/>
@@ -27,7 +27,7 @@
                 <TextBox x:Name="Phone_client" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
                 <TextBlock Text="Адрес проживания" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 150 0"/>
                 <TextBox x:Name="Adres_client" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <Button x:Name="Registration_Button" Content="Зарегистрировать" FontSize ="30" Width="600" Height="60" HorizontalAlignment="Center" Margin="40" Click="Registration_Button_Click"/>
+                <Button x:Name="Registration_Button" Content="Зарегистрировать" FontSize ="30" Width="600" Height="60" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedDarkButton}" Margin="40" Click="Registration_Button_Click"/>
             </StackPanel>
         </Border>
     </Grid>

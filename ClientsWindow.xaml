@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Банк" Height="1080" Width="1920">
-    <Grid Background="#530FAD">
+    <Grid Background="#0772A1">
         <Border MinWidth="600" Width="1700" Height="900" Margin="15" Background="Azure" VerticalAlignment="Center" Padding="30" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Клиенты" HorizontalAlignment="Center"  FontSize ="50" FontWeight="Bold" Margin="10"/>
+                <Button x:Name="GoBack" Content="Назад" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignOutlinedDarkButton}" Margin="0 0 0 20" Click="GoBack_Click"/>
                 <DataGrid x:Name="DGridClients" Height="730" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id" Binding="{Binding id_client}" Width="*"></DataGridTextColumn>

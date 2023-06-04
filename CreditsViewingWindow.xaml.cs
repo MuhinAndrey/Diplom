@@ -13,16 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace The_bank_system
-{
-    /// <summary>
-    /// Логика взаимодействия для CreditsViewingWindow.xaml
-    /// </summary>
+{//Окно просмотра кредитов
     public partial class CreditsViewingWindow : Window
     {
         public CreditsViewingWindow()
         {
             InitializeComponent();
+            //Получение данных из модели БД
             DGridCredits.ItemsSource = BankEntities.GetContext().Credits.ToList();
+        }
+
+        //Кнопка "Назад"
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

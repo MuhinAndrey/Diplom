@@ -13,10 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace The_bank_system
-{
-    /// <summary>
-    /// Логика взаимодействия для AdminOfficeWindow.xaml
-    /// </summary>
+{//Окно "Кабинет администратора"
     public partial class AdminOfficeWindow : Window
     {
         public AdminOfficeWindow()
@@ -24,46 +21,52 @@ namespace The_bank_system
             InitializeComponent();
         }
 
+        //Открытие окна "Регистрация клиента"
         private void Reg_Window_Button_Click(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow registrationWindow = new RegistrationWindow();
-            registrationWindow.Show();
-            Close();
+            Hide();
+            new RegistrationWindow().ShowDialog();
+            ShowDialog();
         }
 
+        //Открытие окна "Предоставление услуг"
         private void Services_Button_Click(object sender, RoutedEventArgs e)
         {
-            ServicesWindow servicesWindow = new ServicesWindow();
-            servicesWindow.Show();
-            Close();
+            Hide();
+            new ServicesWindow().ShowDialog();
+            ShowDialog();
         }
 
+        //Открытие окна "Клиенты"
         private void Clients_Button_Click(object sender, RoutedEventArgs e)
         {
-            ClientsWindow clientsWindow = new ClientsWindow();
-            clientsWindow.Show();
-            Close();
+            Hide();
+            new ClientsWindow().ShowDialog();
+            ShowDialog();
         }
 
+        //Открытие окна "Зарегистрированые услуги"
         private void Service_Viewing_Button_Click(object sender, RoutedEventArgs e)
         {
-            VievingServicesWindow vievingServicesWindow = new VievingServicesWindow();
-            vievingServicesWindow.Show();
-            Close();
+            Hide();
+            new VievingServicesWindow().ShowDialog();
+            ShowDialog();
         }
 
+        //Открытие окна "Регистрация сотрудника"
         private void Reg_Employee_Window_Button_Click(object sender, RoutedEventArgs e)
         {
-            EmployeeRegWindow regserviceWindow = new EmployeeRegWindow();
-            regserviceWindow.Show();
-            Close();
+            Hide();
+            new EmployeeRegWindow().ShowDialog();
+            ShowDialog();
         }
 
+        //Открытие окна "Сотрудники"
         private void Employee_Button_Click(object sender, RoutedEventArgs e)
         {
-            EmployeeWindow employeeWindow = new EmployeeWindow();
-            employeeWindow.Show();
-            Close();
+            Hide();
+            new EmployeeWindow().ShowDialog();
+            ShowDialog();
         }
     }
 }

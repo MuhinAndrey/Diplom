@@ -13,16 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace The_bank_system
-{
-    /// <summary>
-    /// Логика взаимодействия для ClientsWindow.xaml
-    /// </summary>
+{//Окно просмотра зарегистрированных клиентов
     public partial class ClientsWindow : Window
     {
         public ClientsWindow()
         {
             InitializeComponent();
+            //Получение данных из модели БД
             DGridClients.ItemsSource = BankEntities.GetContext().Clients.ToList();
+        }
+        //Кнопка "Назад"
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

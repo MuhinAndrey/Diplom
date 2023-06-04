@@ -7,24 +7,25 @@
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Банк" Height="1080" Width="1920">
-    <Grid Background="#530FAD">
+    <Grid Background="#0772A1">
         <Border MinWidth="600" Width="1700" Height="900" Margin="15" Background="Azure" VerticalAlignment="Center" Padding="30" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Cursor="">
                 <TextBlock Text="Депозит" HorizontalAlignment="Center" FontSize ="60" FontWeight="Bold" Margin="10"/>
-                <TextBlock Text="Id клиента" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 250 0"/>
+                <Button x:Name="GoBack" Content="Назад" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignOutlinedDarkButton}" Margin="20 0 0 0" Click="GoBack_Click"/>
+                <TextBlock Text="Id клиента" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 250 0"/>
                 <TextBox x:Name="Id_client" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Сумма" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 286 0"/>
+                <TextBlock Text="Сумма" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 286 0"/>
                 <TextBox x:Name="Sum_deposit" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Срок в месяцах" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 200 0"/>
+                <TextBlock Text="Срок в месяцах" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 200 0"/>
                 <TextBox x:Name="Term_deposit" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Процент" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 260 0"/>
+                <TextBlock Text="Процент" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 260 0"/>
                 <TextBox x:Name="Procent_deposit" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <TextBlock Text="Ваш id" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 20 280 0"/>
+                <TextBlock Text="Ваш id" HorizontalAlignment="Center"  FontSize ="20" FontWeight="Bold" Margin="10 10 280 0"/>
                 <TextBox x:Name="Id_user" Width="340" Height="60" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
-                <Button x:Name="Reg_Deposit_Button" Content="Зарегистрировать" FontSize ="30" Width="600" Height="60" HorizontalAlignment="Center" Margin="40" Click="Reg_Deposit_Button_Click"/>
+                <Button x:Name="Reg_Deposit_Button" Content="Зарегистрировать" FontSize ="30" Width="600" Height="60" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignOutlinedDarkButton}" Margin="40" Click="Reg_Deposit_Button_Click"/>
             </StackPanel>
         </Border>
     </Grid>
