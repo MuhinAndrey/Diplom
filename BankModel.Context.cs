@@ -9,10 +9,9 @@
 
 namespace The_bank_system
 {
-    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class BankEntities : DbContext
     {
         private static BankEntities _context;
